@@ -3,7 +3,8 @@ import Navbar from "@/containers/Navbar";
 import Banner from "@/containers/Banner";
 import AllItems from "@/containers/AllItems";
 import HotDeals from "@/containers/HotDeals";
-// import MainShortcut from "@/containers/MainShortCut";
+import MainShortcut from "@/containers/MainShortCut";
+
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
     <main className="flex min-h-screen  flex-col items-center main-swipper-container">
       <Navbar />
       <Banner />
-      {/* <MainShortcut /> */}
+      <MainShortcut/>
       <HotDeals />
       <AllItems />
     </main>
