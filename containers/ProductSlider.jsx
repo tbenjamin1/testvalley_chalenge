@@ -5,7 +5,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 
 const ProductSlider = ({ }) => {
-    // const [emblaRef, emblaApi]  = useEmblaCarousel({ loop: true ,slidesToScroll: 4}, [Autoplay()])
+
 
 
     const [emblaRef, emblaApi] = useEmblaCarousel({
