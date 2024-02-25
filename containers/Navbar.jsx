@@ -6,7 +6,7 @@ const Navbar = () => {
         <div className='w-9/12 flex items-center justify-between my-4 sub-nav-container '>
             <div className='TestValley'>
                 <span className=' valley-logo'>TestValley</span>
-                <span><img src="menu.svg" alt="" /></span>
+                <span><img src="menuIcon.png" alt="" /></span>
                 <span className='category' >category</span>
             </div>
             <div className='search flex flex-row justify-center items-center border border-gray-300 p-2'>
