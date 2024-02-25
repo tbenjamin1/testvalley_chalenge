@@ -9,7 +9,6 @@ const Shortcut = async () => {
   const mainShortcut = await response.json();
   return (
     <div className=" short-cut-conatiner">
-
     {mainShortcut.map((data, index) => (
       <div key={index} className='short-cut-item' >
         <img src={data.imageUrl} alt="" className=' w-20 h-20  cursor-pointer' />
