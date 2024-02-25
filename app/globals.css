@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .nav-container {
-background-color: white;
+  background-color: white;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -12,10 +12,12 @@ background-color: white;
   position: fixed;
   z-index: 100;
 }
+
 .main-swipper-container {
   overflow: hidden;
   padding-top: 28px;
 }
+
 .sub-nav-container {
   width: 100%;
   display: flex;
@@ -39,8 +41,6 @@ input {
   font-size: 12px;
 
 }
-
-
 .swipper-image {
   width: 100%;
   height: 100%;
@@ -77,23 +77,35 @@ input {
 }
 
 .short-cut-conatiner {
-
   width: 66%;
   display: flex;
-  justify-content: space-around;
+
+  /* justify-content: space-around; */
+
   align-items: center;
+
   margin: 10px 0px;
+
+  padding: 16px 0;
+
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-row-gap: 24px;
+    grid-column-gap: 12px;
+    overflow: hidden;
 }
 
 .short-cut-item {
-
   margin: 10px 10px;
   display: flex;
   flex-direction: column;
 }
 
 .hot-deals-conatiner {
-
   width: 66%;
   display: flex;
   justify-content: space-between;
@@ -108,14 +120,13 @@ input {
 }
 
 .slider {
-  
   width: 80%;
 }
-.slider-btn{
-position: absolute;
-left: 250px;
 
-margin: -50px 0px;
+.slider-btn {
+  position: absolute;
+  left: 250px;
+  margin: -50px 0px;
 }
 
 .hot-title {
@@ -234,7 +245,7 @@ margin: -50px 0px;
 
 }
 
-.item-info-container{
+.item-info-container {
   padding-top: 20px;
 }
 
@@ -278,12 +289,14 @@ margin: -50px 0px;
   object-fit: cover;
   margin-right: 5px;
 }
-.angle{
+
+.angle {
   width: 40px;
   height: 40px;
   object-fit: cover;
   margin-right: 5px;
 }
+
 .rate-value {
 
   display: flex;
@@ -292,7 +305,7 @@ margin: -50px 0px;
   font-weight: 500;
   font-size: 11px;
   color: rgb(102, 102, 102);
-  
+
 
 }
 
@@ -301,22 +314,72 @@ margin: -50px 0px;
   justify-content: flex-start;
   align-items: center;
 }
-.TestValley{
+
+.TestValley {
   display: flex;
   align-items: center;
 }
-.TestValley img{
+
+.TestValley img {
   margin: 0px 10px;
 }
-.valley-logo{
+
+.valley-logo {
   cursor: pointer;
-    color: rgb(0, 208, 148);
-    font-size: 20px;
-    font-weight: 500;
+  color: rgb(0, 208, 148);
+  font-size: 20px;
+  font-weight: 500;
 }
-.category{
+
+.category {
   cursor: pointer;
-    color: rgb(0, 208, 148);
-    font-size: 15px;
-    font-weight: 500;
+  color: rgb(0, 208, 148);
+  font-size: 15px;
+  font-weight: 500;
+}
+.notification{
+  display: none;
+}
+@media only screen and (max-width: 768px) and (min-width: 320px) {
+  .short-cut-conatiner {
+    width: 100% !important;
+ 
+  }
+  .hot-deals-conatiner{
+    width: 100% !important;
+  }
+  .slider {
+    width: 66%;
+}
+.hot-title {
+  font-weight: 600;
+  font-size: 13px;
+  
+}
+
+.hot-sub-title {
+  font-weight: 500;
+  font-size: 8px;
+}
+.slider-btn {
+  position: absolute;
+  left: 12px;
+  margin: -50px 0px;
+}
+.angle {
+  width: 21px;
+  height: 28px;
+}
+.login-container,.menu-icon ,.category,input{
+  display: none;
+}
+.notification{
+  display: block;
+  width: 43px;
+  height: 24px;
+  object-fit: cover;
+}
+.search{
+border: none;
+}
 }
