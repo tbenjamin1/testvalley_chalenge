@@ -27,7 +27,7 @@ const ProductSlider = async ({ hotDeals }) => {
                     >
                         <div className=' ' >
                             <div className=' image-container  '>
-                                <img className='' src={data.thumbnail ? data.thumbnail.uri : "https://dvd6ljcj7w3pj.cloudfront.net/media/COLLECTION/a7fe90e1-b725-4825-95a2-8b1e41bccb99.png"} alt="" />
+                                <img className='' src={data.thumbnail ? data.thumbnail.uri : "imagephoto.png"} alt="" />
                             </div>
 
                             <div className='item-badge flex py-5 px-1 ' >
