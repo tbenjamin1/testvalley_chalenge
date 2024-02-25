@@ -4,18 +4,18 @@ const Navbar = () => {
   return (
     <div className='flex  items-center justify-center border-b border-gray-200 w-full  bg-black nav-container'>
         <div className='w-9/12 flex items-center justify-between my-4 sub-nav-container '>
-            <div className='flex flex-row gap-8'>
-                <span className=' text-green-400 font-bold text-xl'>TestValley</span>
+            <div className='TestValley'>
+                <span className=' valley-logo'>TestValley</span>
                 <span><img src="menu.svg" alt="" /></span>
-                <span>category</span>
+                <span className='category' >category</span>
             </div>
             <div className='search flex flex-row justify-center items-center border border-gray-300 p-2'>
                 <span>
                     <img src="search.svg" alt="" />
                 </span>
-                <span className='ml-2 '>
-                    <input type="text" className=' w-96 input' placeholder={`If you're wondering whether to buy it or not`} />
-                </span>
+                
+                    <input type="text" className=' ' placeholder={`If you're wondering whether to buy it or not`} />
+               
             </div>
             <div className='flex flex-row gap-6'>
                 <span>

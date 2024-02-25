@@ -8,7 +8,7 @@ import MainShortcut from "@/containers/MainShortCut";
 
 export default function Home() {
   return (
-
+// parent componet
     <main className="flex min-h-screen  flex-col items-center main-swipper-container">
       <Navbar />
       <Banner />

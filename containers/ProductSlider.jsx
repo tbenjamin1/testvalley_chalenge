@@ -4,10 +4,9 @@ import React, { useEffect } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 
-const ProductSlider = ({ }) => {
-
-
-
+const ProductSlider = async ({ hotDeals }) => {
+   
+    // setting  embla-carousel properties
     const [emblaRef, emblaApi] = useEmblaCarousel({
         loop: true,
         align: "start",
@@ -23,311 +22,59 @@ const ProductSlider = ({ }) => {
         <div className='main-swipper-container' >
             <div className="viewport" ref={emblaRef}>
                 <div className="container">
-                    <div
-
+                    {hotDeals.map((data, index) => (<div key={index}
                         className="slide"
-
                     >
-
                         <div className=' ' >
                             <div className=' image-container  '>
-                                <img className='h-full w-full object-cover' src="home-event.svg" alt="" />
+                                <img className='' src={data.thumbnail ? data.thumbnail.uri : "https://dvd6ljcj7w3pj.cloudfront.net/media/COLLECTION/a7fe90e1-b725-4825-95a2-8b1e41bccb99.png"} alt="" />
                             </div>
 
                             <div className='item-badge flex py-5 px-1 ' >
                                 <img className='return-img' src="return.png" alt="" /><span className='pl-1' >returnable</span>
                             </div>
-                            <div className='px-2 flex flex-col' >
+                            <div className='item-info-container' >
                                 <div className='item-description' >
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente dolor perspiciatis sunt tempore labore? Ut veniam aliquam consequatur in iusto accusamus ab,
+                                    {data.title ? data.title : 'N/A'}
                                 </div>
                                 <div className='flex  justify-start items-center' >
-                                    <span className='discount flex justify-center items-center' >50%</span>
+                                    <span className='discount flex justify-center items-center' >{data.installmentPrice?data.installmentPrice:'N/A'}%</span>
                                     <div className='flex justify-center items-center' >
-                                        <span className='amount' >33,950</span>
-                                        <span className='currency' >$</span>
+                                        <span className='amount' >{data.installmentPrice?data.installmentPrice:'N/A'}</span>
+                                        <span className='currency' >{data.installmentPrice?data.installmentPrice:'N/A'}</span>
                                     </div>
 
                                 </div>
                                 <div className='flex flex-col' >
                                     <div>
                                         <div className='reward' >
-                                            coupon
+                                            {data.type}
                                         </div>
                                     </div>
                                     <div className='rate' >
-                                        <img className='rate-img' src="star.png" alt="" />   <span className='rate-value' > 3.5</span>
+                                        <img className='rate-img' src="star.png" alt="" />   <span className='rate-value' >{data.rating} </span>
                                     </div>
                                     <div className=' information' >
-                                        <img className='info-img' src="car.png" alt="" />   <span className='px-2' >hagaxaghva</span>
+                                        <img className='info-img' src="https://prod-testvalley.s3.ap-northeast-2.amazonaws.com/static/preface_icon/money.png" alt="" />   <span className='px-2' >{data.code} </span>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
 
-                    </div>
-                    <div
+                    </div>))}
 
-                        className="slide"
 
-                    >
-                        <div className=' ' >
-                            <div className=' image-container  '>
-                                <img className='h-full w-full object-cover' src="home-event.svg" alt="" />
-                            </div>
 
-                            <div className='item-badge flex py-5 px-1 ' >
-                                <img className='return-img' src="return.png" alt="" /><span className='pl-1' >returnable</span>
-                            </div>
-                            <div className='px-2 flex flex-col' >
-                                <div className='item-description' >
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente dolor perspiciatis sunt tempore labore? Ut veniam aliquam consequatur in iusto accusamus ab,
-                                </div>
-                                <div className='flex  justify-start items-center' >
-                                    <span className='discount flex justify-center items-center' >50%</span>
-                                    <div className='flex justify-center items-center' >
-                                        <span className='amount' >33,950</span>
-                                        <span className='currency' >$</span>
-                                    </div>
-
-                                </div>
-                                <div className='flex flex-col' >
-                                    <div>
-                                        <div className='reward' >
-                                            coupon
-                                        </div>
-                                    </div>
-                                    <div className='rate' >
-                                        <img className='rate-img' src="star.png" alt="" />   <span className='rate-value' > 3.5</span>
-                                    </div>
-                                    <div className=' information' >
-                                        <img className='info-img' src="car.png" alt="" />   <span className='px-2' >hagaxaghva</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div
-
-                        className="slide"
-
-                    >
-                        <div className=' ' >
-                            <div className=' image-container  '>
-                                <img className='h-full w-full object-cover' src="home-event.svg" alt="" />
-                            </div>
-
-                            <div className='item-badge flex py-5 px-1 ' >
-                                <img className='return-img' src="return.png" alt="" /><span className='pl-1' >returnable</span>
-                            </div>
-                            <div className='px-2 flex flex-col' >
-                                <div className='item-description' >
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente dolor perspiciatis sunt tempore labore? Ut veniam aliquam consequatur in iusto accusamus ab,
-                                </div>
-                                <div className='flex  justify-start items-center' >
-                                    <span className='discount flex justify-center items-center' >50%</span>
-                                    <div className='flex justify-center items-center' >
-                                        <span className='amount' >33,950</span>
-                                        <span className='currency' >$</span>
-                                    </div>
-
-                                </div>
-                                <div className='flex flex-col' >
-                                    <div>
-                                        <div className='reward' >
-                                            coupon
-                                        </div>
-                                    </div>
-                                    <div className='rate' >
-                                        <img className='rate-img' src="star.png" alt="" />   <span className='rate-value' > 3.5</span>
-                                    </div>
-                                    <div className=' information' >
-                                        <img className='info-img' src="car.png" alt="" />   <span className='px-2' >hagaxaghva</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div
-
-                        className="slide"
-
-                    >
-                        <div className=' ' >
-                            <div className=' image-container  '>
-                                <img className='h-full w-full object-cover' src="home-event.svg" alt="" />
-                            </div>
-
-                            <div className='item-badge flex py-5 px-1 ' >
-                                <img className='return-img' src="return.png" alt="" /><span className='pl-1' >returnable</span>
-                            </div>
-                            <div className='px-2 flex flex-col' >
-                                <div className='item-description' >
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente dolor perspiciatis sunt tempore labore? Ut veniam aliquam consequatur in iusto accusamus ab,
-                                </div>
-                                <div className='flex  justify-start items-center' >
-                                    <span className='discount flex justify-center items-center' >50%</span>
-                                    <div className='flex justify-center items-center' >
-                                        <span className='amount' >33,950</span>
-                                        <span className='currency' >$</span>
-                                    </div>
-
-                                </div>
-                                <div className='flex flex-col' >
-                                    <div>
-                                        <div className='reward' >
-                                            coupon
-                                        </div>
-                                    </div>
-                                    <div className='rate' >
-                                        <img className='rate-img' src="star.png" alt="" />   <span className='rate-value' > 3.5</span>
-                                    </div>
-                                    <div className=' information' >
-                                        <img className='info-img' src="car.png" alt="" />   <span className='px-2' >hagaxaghva</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div
-
-                        className="slide"
-
-                    >
-                        <div className=' ' >
-                            <div className=' image-container  '>
-                                <img className='h-full w-full object-cover' src="home-event.svg" alt="" />
-                            </div>
-
-                            <div className='item-badge flex py-5 px-1 ' >
-                                <img className='return-img' src="return.png" alt="" /><span className='pl-1' >returnable</span>
-                            </div>
-                            <div className='px-2 flex flex-col' >
-                                <div className='item-description' >
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente dolor perspiciatis sunt tempore labore? Ut veniam aliquam consequatur in iusto accusamus ab,
-                                </div>
-                                <div className='flex  justify-start items-center' >
-                                    <span className='discount flex justify-center items-center' >50%</span>
-                                    <div className='flex justify-center items-center' >
-                                        <span className='amount' >33,950</span>
-                                        <span className='currency' >$</span>
-                                    </div>
-
-                                </div>
-                                <div className='flex flex-col' >
-                                    <div>
-                                        <div className='reward' >
-                                            coupon
-                                        </div>
-                                    </div>
-                                    <div className='rate' >
-                                        <img className='rate-img' src="star.png" alt="" />   <span className='rate-value' > 3.5</span>
-                                    </div>
-                                    <div className=' information' >
-                                        <img className='info-img' src="car.png" alt="" />   <span className='px-2' >hagaxaghva</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div
-
-                        className="slide"
-
-                    >
-                        <div className=' ' >
-                            <div className=' image-container  '>
-                                <img className='h-full w-full object-cover' src="home-event.svg" alt="" />
-                            </div>
-
-                            <div className='item-badge flex py-5 px-1 ' >
-                                <img className='return-img' src="return.png" alt="" /><span className='pl-1' >returnable</span>
-                            </div>
-                            <div className='px-2 flex flex-col' >
-                                <div className='item-description' >
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente dolor perspiciatis sunt tempore labore? Ut veniam aliquam consequatur in iusto accusamus ab,
-                                </div>
-                                <div className='flex  justify-start items-center' >
-                                    <span className='discount flex justify-center items-center' >50%</span>
-                                    <div className='flex justify-center items-center' >
-                                        <span className='amount' >33,950</span>
-                                        <span className='currency' >$</span>
-                                    </div>
-
-                                </div>
-                                <div className='flex flex-col' >
-                                    <div>
-                                        <div className='reward' >
-                                            coupon
-                                        </div>
-                                    </div>
-                                    <div className='rate' >
-                                        <img className='rate-img' src="star.png" alt="" />   <span className='rate-value' > 3.5</span>
-                                    </div>
-                                    <div className=' information' >
-                                        <img className='info-img' src="car.png" alt="" />   <span className='px-2' >hagaxaghva</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div
-
-                        className="slide"
-
-                    >
-                        <div className=' ' >
-                            <div className=' image-container  '>
-                                <img className='h-full w-full object-cover' src="home-event.svg" alt="" />
-                            </div>
-
-                            <div className='item-badge flex py-5 px-1 ' >
-                                <img className='return-img' src="return.png" alt="" /><span className='pl-1' >returnable</span>
-                            </div>
-                            <div className='px-2 flex flex-col' >
-                                <div className='item-description' >
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente dolor perspiciatis sunt tempore labore? Ut veniam aliquam consequatur in iusto accusamus ab,
-                                </div>
-                                <div className='flex  justify-start items-center' >
-                                    <span className='discount flex justify-center items-center' >50%</span>
-                                    <div className='flex justify-center items-center' >
-                                        <span className='amount' >33,950</span>
-                                        <span className='currency' >$</span>
-                                    </div>
-
-                                </div>
-                                <div className='flex flex-col' >
-                                    <div>
-                                        <div className='reward' >
-                                            coupon
-                                        </div>
-                                    </div>
-                                    <div className='rate' >
-                                        <img className='rate-img' src="star.png" alt="" />   <span className='rate-value' > 3.5</span>
-                                    </div>
-                                    <div className=' information' >
-                                        <img className='info-img' src="car.png" alt="" />   <span className='px-2' >hagaxaghva</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
                 </div>
             </div>
 
             <div className='slider-btn' >
                 <button type="button" onClick={() => emblaApi.scrollPrev()}>
-                <img className='angle' src="angleleft.png" alt="" />
+                    <img className='angle' src="angleleft.png" alt="" />
                 </button>
                 <button type="button" onClick={() => emblaApi.scrollNext()}>
-                <img className='angle' src="anglerifht.png" alt="" />
+                    <img className='angle' src="anglerifht.png" alt="" />
                 </button>
             </div>
 
