@@ -7,6 +7,7 @@ const MainShortcut = async () => {
 
   const response = await fetch('https://api.testvalley.kr/main-shortcut/all', { cache: 'no-store' });
   const mainShortcut = await response.json();
+  
   return (
     <div className=" short-cut-conatiner">
 
